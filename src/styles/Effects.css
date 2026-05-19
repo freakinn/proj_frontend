@@ -1,0 +1,42 @@
+.bg-hover-div:hover {
+    background-color: #61c261;
+}
+
+.custom-btn {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  
+  .custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+  }
+  
+  .custom-modal-card {
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .group-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .group-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .scrollable-container {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .bg-hover-div:hover {
+    background-color: #f1f1f1;
+  }
+  

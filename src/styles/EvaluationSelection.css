@@ -1,0 +1,11 @@
+.custom-radio .form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black !important;
+    background-color: white;
+}
+
+.custom-radio .form-check-input:checked {
+    background-color: blue;
+    border-color: blue;
+}

@@ -1,0 +1,61 @@
+/* Main Container */
+.manage-students-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar (Fixed on Desktop, Scrollable on Mobile) */
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    flex: 0 0 250px; /* Default width for sidebar */
+}
+
+/* QuickMenu (Fixed on Desktop, Scrollable on Mobile) */
+.quickmenu {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    flex: 0 0 80px; /* Default width for quick menu */
+}
+
+/* Middle Section (Scrollable) */
+.content {
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        position: relative;
+        height: auto;
+        overflow: auto;
+        flex: 0 0 200px; /* Adjust width for tablets */
+    }
+
+    .quickmenu {
+        position: relative;
+        height: auto;
+        overflow: auto;
+        flex: 0 0 60px; /* Adjust width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar, .quickmenu {
+        flex: 0 0 100px;
+        height: auto;
+        position: relative;
+        overflow: auto;
+    }
+
+    .content {
+        height: auto;
+    }
+}
