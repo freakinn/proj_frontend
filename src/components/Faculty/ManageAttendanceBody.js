@@ -37,7 +37,7 @@ function ManageAttendanceBody() {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/students");
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students");
                 if (!response.ok) {
                     throw new Error('Failed to fetch students');
                 }
@@ -51,7 +51,7 @@ function ManageAttendanceBody() {
 
         const fetchTotalAttendance = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/students/total-attendance", {
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/total-attendance", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ function ManageAttendanceBody() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/courses");
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/courses");
                 if (!response.ok) {
                     throw new Error('Failed to fetch courses');
                 }

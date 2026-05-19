@@ -23,7 +23,7 @@ const Sidebar = () => {
 
   const fetchFacultyData = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5173/api/faculty/${id}`);
+      const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/faculty/${id}`);
       if (response.ok) {
         const facultyData = await response.json();
         setUserName(facultyData.name);

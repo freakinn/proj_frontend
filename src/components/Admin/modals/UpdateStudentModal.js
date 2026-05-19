@@ -50,7 +50,7 @@ function UpdateStudentModal({ show, handleClose, student, setMessage, handleShow
         setLoading(true);
 
         try {
-            const response = await fetch(`http://localhost:5173/api/students/${student._id}`, {
+            const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/${student._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

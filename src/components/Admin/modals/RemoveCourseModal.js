@@ -13,7 +13,7 @@ function RemoveCourseModal({ show, handleClose, setMessage, handleShowToast }) {
 
     const fetchCourses = async () => {
         try {
-            const response = await fetch('http://localhost:5173/api/courses');
+            const response = await fetch('https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/courses');
             if (!response.ok) {
                 throw new Error('Failed to fetch courses');
             }
@@ -40,7 +40,7 @@ function RemoveCourseModal({ show, handleClose, setMessage, handleShowToast }) {
 
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:5173/api/courses/${courseName}`, {
+            const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/courses/${courseName}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

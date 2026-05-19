@@ -31,7 +31,7 @@ const AdminFacultyLogin = () => {
       const lowercasedEmail = email.toLowerCase();
 
       const response = await fetch(
-        "http://localhost:5173/api/login/admin-faculty",
+        "https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/login/admin-faculty",
         {
           method: "POST",
           headers: {

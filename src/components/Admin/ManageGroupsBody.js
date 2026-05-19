@@ -232,7 +232,7 @@ function ManageGroupsBody() {
 
   const fetchGroupSettings = async () => {
     try {
-      const response = await axios.get("http://localhost:5173/api/groups");
+      const response = await axios.get("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/groups");
       setGroupSettings(response.data);
     } catch (error) {
       console.error("Error fetching group settings:", error);
@@ -252,10 +252,10 @@ function ManageGroupsBody() {
     try {
       if (editIndex !== null) {
         // Update existing group setting
-        await axios.put(`http://localhost:5173/api/groups/${groupSettings[editIndex]._id}`, newSettings);
+        await axios.put(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/groups/${groupSettings[editIndex]._id}`, newSettings);
       } else {
         // Save new group setting
-        await axios.post("http://localhost:5173/api/groups", newSettings);
+        await axios.post("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/groups", newSettings);
       }
 
       // Refresh the group settings list after saving
@@ -283,7 +283,7 @@ function ManageGroupsBody() {
     if (window.confirm("Are you sure you want to delete this setting?")) {
       const id = groupSettings[index]._id;
       try {
-        await axios.delete(`http://localhost:5173/api/groups/${id}`);
+        await axios.delete(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/groups/${id}`);
         fetchGroupSettings(); // Refresh list after deletion
       } catch (error) {
         console.error("Error deleting group setting:", error);

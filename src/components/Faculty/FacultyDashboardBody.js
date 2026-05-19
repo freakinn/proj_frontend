@@ -12,7 +12,7 @@ function FacultyBody() {
     useEffect(() => {
         const fetchTotalAttendance = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/students/total-attendance", {
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/total-attendance", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ function FacultyBody() {
 
         const fetchStudentsData = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/students/");
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/");
                 const data = await response.json();
                 setTotalStudents(data.length);
 

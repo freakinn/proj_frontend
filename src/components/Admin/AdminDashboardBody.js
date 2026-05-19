@@ -11,21 +11,21 @@
 //   const [totalCourse, setTotalCourse] = useState(0);
 
 //   useEffect(() => {
-//     fetch("http://localhost:5173/api/faculty/")
+//     fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/faculty/")
 //       .then((response) => response.json())
 //       .then((data) => setTotalFaculties(data.length))
 //       .catch((error) => console.error("Error fetching faculties:", error));
 //   }, []);
 
 //   useEffect(() => {
-//     fetch("http://localhost:5173/api/students/")
+//     fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/")
 //       .then((response) => response.json())
 //       .then((data) => setTotalStudents(data.length))
 //       .catch((error) => console.error("Error fetching students:", error));
 //   }, []);
 
 //   useEffect(() => {
-//     fetch("http://localhost:5173/api/courses/")
+//     fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/courses/")
 //       .then((response) => response.json())
 //       .then((data) => setTotalCourse(data.length))
 //       .catch((error) => console.error("Error fetching courses:", error));
@@ -124,14 +124,14 @@ function AdminBody() {
   const [totalStudents, setTotalStudents] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5173/api/faculty/")
+    fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/faculty/")
       .then((response) => response.json())
       .then((data) => setTotalFaculties(data.length))
       .catch((error) => console.error("Error fetching faculties:", error));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5173/api/students/")
+    fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/")
       .then((response) => response.json())
       .then((data) => setTotalStudents(data.length))
       .catch((error) => console.error("Error fetching students:", error));

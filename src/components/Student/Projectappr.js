@@ -40,7 +40,7 @@ function ProjectAppr() {
 
   const fetchExistingRequest = useCallback(async (id, semester) => {
     try {
-      const response = await fetch(`http://localhost:5173/api/request/requests/${id}/${semester}`);
+      const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/request/requests/${id}/${semester}`);
       if (response.ok) {
         const requestData = await response.json();
         if (requestData && (requestData.Status === "accepted" || requestData.Status === "pending")) {
@@ -54,7 +54,7 @@ function ProjectAppr() {
 
   const fetchStudentData = useCallback(async (id) => {
     try {
-      const response = await fetch(`http://localhost:5173/api/students/${id}`);
+      const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/${id}`);
       if (response.ok) {
         const studentData = await response.json();
         setSemester(studentData.semester);
@@ -90,7 +90,7 @@ function ProjectAppr() {
     try {
       const currentYear = new Date().getFullYear();
       const groupResponse = await fetch(
-        `http://localhost:5173/api/groups?semester=${semester}&year=${currentYear}`
+        `https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/groups?semester=${semester}&year=${currentYear}`
       );
       if (groupResponse.ok) {
         const groupData = await groupResponse.json();
@@ -104,14 +104,14 @@ function ProjectAppr() {
   const fetchStudentsBySemesterAndBatch = async (semester, batch) => {
     try {
       const response = await fetch(
-        `http://localhost:5173/api/students/filter/by-semester-batch?semester=${semester}&batch=${batch}`
+        `https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/filter/by-semester-batch?semester=${semester}&batch=${batch}`
       );
       
       if (response.ok) {
         const data = await response.json();
         
         const activeStudentsRes = await fetch(
-          `http://localhost:5173/api/request/activeStudents/${semester}/${batch}`
+          `https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/request/activeStudents/${semester}/${batch}`
         );
         const { activeStudentIds } = await activeStudentsRes.json();
   
@@ -132,7 +132,7 @@ function ProjectAppr() {
 
   const getFaculty = async () => {
     try {
-      const response = await fetch("http://localhost:5173/api/faculty", { method: "GET" });
+      const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/faculty", { method: "GET" });
       if (response.ok) {
         const data = await response.json();
         setFacultyList(data);
@@ -150,7 +150,7 @@ function ProjectAppr() {
     try {
       const currentYear = new Date().getFullYear();
       const response = await fetch(
-        `http://localhost:5173/api/facultyLoad?facultyId=${facultyId}&semester=${semester}&year=${currentYear}`
+        `https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/facultyLoad?facultyId=${facultyId}&semester=${semester}&year=${currentYear}`
       );
       if (response.ok) {
         const facultyLoadData = await response.json();
@@ -220,7 +220,7 @@ function ProjectAppr() {
   const downloadReport = async (requestId) => {
     try {
         // Open in new tab approach
-        window.open(`http://localhost:5173/api/request/download-report/${requestId}`, '_blank');
+        window.open(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/request/download-report/${requestId}`, '_blank');
     } catch (error) {
         console.error('Error downloading report:', error);
         alert('Error downloading report');
@@ -284,7 +284,7 @@ function ProjectAppr() {
         Approved: false,
       };
   
-      const response = await fetch("http://localhost:5173/api/request/createreq", {
+      const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/request/createreq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),

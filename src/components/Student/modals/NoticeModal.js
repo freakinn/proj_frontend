@@ -10,7 +10,7 @@ function NoticeModal({ show, handleClose }) {
 
     const fetchNotice = async () => {
         try {
-            const response = await fetch("http://localhost:5173/api/notice");
+            const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/notice");
             const data = await response.json();
 
             setNotice(data);

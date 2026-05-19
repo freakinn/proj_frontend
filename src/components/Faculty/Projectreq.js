@@ -13,7 +13,7 @@
 //     try {
 //       const facultyId = localStorage.getItem("facultyId");
 //       console.log("Fetching approved requests for faculty:", facultyId, "Semester:", semester, "Year:", year); // Debugging
-//       const response = await fetch("http://localhost:5173/api/request/getapprovedreq", {
+//       const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/request/getapprovedreq", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json"
@@ -150,7 +150,7 @@ function ProjectReq() {
     const fetchApprovedRequests = async (facultyId, semester, year) => {
         console.log("Fetching approved requests with:", { facultyId, semester, year });
         try {
-            const response = await fetch("http://localhost:5173/api/request/getapprovedreq", {
+            const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/request/getapprovedreq", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ facultyId, semester, year })
@@ -170,7 +170,7 @@ function ProjectReq() {
 
     const fetchFacultyData = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5173/api/faculty/${id}`);
+            const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/faculty/${id}`);
             if (response.ok) {
                 const facultyData = await response.json();
                 setUserName(facultyData.name);

@@ -68,7 +68,7 @@ function ManageStudentsBody() {
         formData.append('file', file);
     
         try {
-            const response = await fetch('http://localhost:5173/api/uploadStudents', {
+            const response = await fetch('https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/uploadStudents', {
                 method: 'POST',
                 body: formData,
             });            
@@ -97,7 +97,7 @@ function ManageStudentsBody() {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/students");
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students");
                 if (!response.ok) {
                     throw new Error('Failed to fetch students');
                 }

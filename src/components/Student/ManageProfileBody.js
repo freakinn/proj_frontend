@@ -31,7 +31,7 @@ function ManageProfileBody() {
                 const decodedToken = jwtDecode(token);
                 const { id } = decodedToken;
                 try {
-                    const response = await fetch(`http://localhost:5173/api/students/${id}`);
+                    const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/${id}`);
                     if (response.ok) {
                         const studentData = await response.json();
                         setStudent(studentData);
@@ -81,7 +81,7 @@ function ManageProfileBody() {
 
         setValidated(true);
         setLoading(true);
-        const response = await fetch(`http://localhost:5173/api/students/${student._id}`, {
+        const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/students/${student._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

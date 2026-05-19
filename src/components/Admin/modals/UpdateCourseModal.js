@@ -26,7 +26,7 @@ function UpdateCourseModal({ show, handleClose, course, setMessage, handleShowTo
 
         setValidated(true);
         setLoading(true);
-        const response = await fetch(`http://localhost:5173/api/courses/${course._id}`, {
+        const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/courses/${course._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

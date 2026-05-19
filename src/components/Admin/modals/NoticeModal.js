@@ -17,7 +17,7 @@ function NoticeModal({ show, handleClose, setMessage, handleShowToast }) {
     useEffect(() => {
         const fetchNotice = async () => {
             try {
-                const response = await fetch("http://localhost:5173/api/notice");
+                const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/notice");
                 const data = await response.json();
 
                 setNotice(data);
@@ -52,7 +52,7 @@ function NoticeModal({ show, handleClose, setMessage, handleShowToast }) {
         setLoading(true);
         const maxNoticeNumber = notice.reduce((max, current) => Math.max(max, current.noticeNumber), 0);
         const noticeDate = new Date().toLocaleDateString('en-GB');
-        const response = await fetch("http://localhost:5173/api/notice", {
+        const response = await fetch("https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/notice", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ function NoticeModal({ show, handleClose, setMessage, handleShowToast }) {
 
     const handleDeleteNotice = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5173/api/notice/${id}`, {
+            const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/notice/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

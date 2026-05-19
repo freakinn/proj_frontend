@@ -22,7 +22,7 @@ const Sidebar = () => {
 
   const fetchAdminData = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5173/api/admin/${id}`);
+      const response = await fetch(`https://proj-backend-r0kpxc46e-freakinns-projects.vercel.app/api/admin/${id}`);
       if (response.ok) {
         const adminData = await response.json();
         setUserName(adminData.name);
